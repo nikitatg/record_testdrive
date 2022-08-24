@@ -39,9 +39,8 @@ class _AudioRecorderState extends State<AudioRecorder> {
       // final devs = await _audioRecorder.listInputDevices();
 
       await _audioRecorder.start(
-        path: 'C:\\Users\\agnik\\Desktop.m4a',
+        path: 'D:\\foo',
         encoder: AudioEncoder.aacLc,
-        //samplingRate: 48000, bitRate: 128000
       );
 
       bool isRecording = await _audioRecorder.isRecording();
@@ -240,7 +239,7 @@ class _MyAppState extends State<MyApp> {
                 )
               : AudioRecorder(
                   onStop: (path) {
-                    if (kDebugMode) print('Recorded file path: $path');
+                    print('Recorded file path: $path');
                     setState(() {
                       audioPath = path;
                       showPlayer = true;
